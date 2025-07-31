@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="center-item">
+    <div class="container">
+        <header class="head flex-box">
+            <h1>to do list</h1>
+            <button class="themebtn btn-style">
+                <img src="./assets/moon.svg" alt="" class="buttonImg">
+                <!-- <img src="./assets/white-sun.svg" alt="" class="sun buttonImg"> -->
+            </button>
+        </header>
+        <div class="input-task flex-box">
+            <input type="text" class="taskBox" placeholder="Enter Task">
+            <button class="addTask">add</button>
+        </div>
+        <ol class="task-list">
+        </ol>
+        <ul class="foot flex-box">
+            <li class="center-item"><button class="footBtn btn-style all" value="1">all</button></li>
+            <li class="center-item"><button class="footBtn btn-style process" value="0">process</button></li>
+            <li class="center-item"><button class="footBtn btn-style archive" value="0">archive</button></li>
+            <li class="center-item"><button class="footBtn btn-style close" value="0">close</button></li>
+            <li class="center-item"><button class="footBtn btn-style clear" value="0">clear</button></li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+@font-face {
+    font-family: 'Nunito-ragular';
+    src: url("./assets/fonts/Nunito-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito-bold';
+    src: url("./assets/fonts/Nunito-Bold.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --background: #f5f7fa;
+    --Primary-Text: #1a1a1a;
+    --secondry-Text: #4a4a4a;
+    --Accent-Color: #3b82f6;
+    --Task-Complete: #d1fae5;
+    --Task-Incomplete: #fee2e2;
+    --Task-InProcess: #fef9c3;
+    --Container: #ffffff;
+}
+
+body.dark {
+    --background: #121212;
+    --Primary-Text: #f5f5f5;
+    --secondry-Text: #a1a1a1;
+    --Accent-Color: #3b82f6;
+    --Task-Complete: #065f46;
+    --Task-Incomplete: #7f1d1d;
+    --Task-InProcess: #92400e;
+    --Container: #1f1f1f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito-ragular', sans-serif;
+}
+
+/* conmon style */
+
+ol,
+ul {
+    list-style: none;
+}
+
+.center-item {
+    display: grid;
+    place-items: center;
+}
+
+.flex-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+input:focus, button:focus{
+    outline: none;
+}
+
+body {
+    --padding: 2.75rem;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background);
+}
+
+.btn-style {
+    background: none;
+    border: 0;
+    display: inline;
+    color: var(--Primary-Text);
+}
+
+.container {
+    height: auto;
+    width: 90%;
+    max-width: 580px;
+    background-color: var(--Container);
+    padding: calc(var(--padding) / 2) var(--padding);
+    border-radius: 7px;
+    display: grid;
+    gap: 0.75rem;
+}
+
+/* head of container style */
+
+.container .head {
+    height: auto;
+    width: 100%;
+    align-items: center;
+    /* padding: 1.75rem 0; */
+}
+
+.container .head h1 {
+    text-transform: capitalize;
+    color: var(--Primary-Text);
+}
+
+.container .themebtn{
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: all .5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.container .themebtn .buttonImg{
+    height: 100%;
+    width: 100%;
+}
+
+/* input task style */
+
+.container .input-task{
+    height: 2.5rem;
+    width: 100%;
+    align-items: center;
+}
+
+.container .input-task .taskBox{
+    height: 90%;
+    width: 80%;
+    border: 0;
+    background-color: var(--background);
+    padding: 0 1.5rem;
+    border-radius: 2px;
+    color: var(--Primary-Text);
+}
+
+.container .input-task .addTask{
+    height: 90%;
+    width: 15%;
+    border: 0;
+    font-weight: 600;
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: var(--background);
+    color: var(--Primary-Text);
+    border-radius: 2px;
+}
+
+.container .input-task .addTask:hover{
+    background-color: var(--Primary-Text);
+    color: var(--Container);
+}
+
+/* task list style */
+
+.container .task-list{
+    color: var(--Primary-Text);
+    height: 30vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 0.50rem;
+}
+
+.container .task-list::-webkit-scrollbar{
+    display: none;
+}
+
+.container .task-list .task{
+    align-items: center;
+    min-height: 7vh;
+    padding: 0 calc(var(--padding)/4);
+    position: relative;
+}
+
+.container .task-list .task.complate{
+    background-color: var(--Task-Complete);
+}
+
+.container .task-list .task.Incomplete{
+    background-color: var(--Task-Incomplete);
+}
+
+.container .task-list .task.InProcess{
+    background-color: var(--Task-InProcess);
+}
+
+/* .container .task-list .task .task-text{
+    max-width: 64%;
+} */
+
+.container .task-list .superBtnBox{
+    height: 100%;
+}
+
+.container .task-list .buttonBox{
+    height: 100%;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container .task-list .buttonBox button{
+    height: 70%;
+    width: 3.45rem;
+    border: 0;
+    font-weight: 500;
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: var(--background);
+    color: var(--Primary-Text);
+    border-radius: 2px;
+}
+
+.container .task-list .buttonBox button:hover{
+    background-color: var(--Primary-Text);
+    color: var(--Container);
+}
+
+.container .task-list .mobile-btnList{
+    display: none;
+}
+
+.container .task-list .dropList{
+    display: none;
+}
+
+@media (max-width : 768px) {
+    .container .task-list .buttonBox{
+        display: none;
+    }
+
+    .container .task-list .task .mobile-btnList{
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 2px;
+    }
+    
+    .container .task-list .mobile-btnList.atTop{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .container .task-list .mobile-btnList.atCenter{
+        display: block;
+        position: absolute;
+        top: -75%;
+        right: 0;
+    }
+    
+    .container .task-list .mobile-btnList.atBottom{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .container .task-list .task .dropList{
+        height: 1.7rem;
+        width: 1.5rem;
+        display: grid;
+        place-items: center;
+        border-radius: 2px;
+        border: 0;
+        background-color: var(--background);
+        color: var(--Primary-Text);
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    
+    .container .task-list .dropList:hover{
+        background-color: var(--Primary-Text);
+        color: var(--Container);
+    }
+
+    .container .task-list .mobile-btnList button{
+        display: block;
+        height: 2.5rem;
+        width: 7.5rem;
+        border: 0;
+        background-color: var(--background);
+        color: var(--Primary-Text);
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    
+    .container .task-list .mobile-btnList button:hover{
+        background-color: var(--Primary-Text);
+        color: var(--Container);
+    }
+}
+
+/* footer style */
+
+.container .foot{
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container .foot li{
+    height: 1.5rem;
+    width: 6rem;
+}
+
+.container .foot li .footBtn{
+    color: var(--Primary-Text);
+    display: inline;   
+    font-size: 1rem; 
+}
+
+.container .foot li .footBtn:is(:hover, :focus){
+    color: var(--Accent-Color);    
+    text-decoration: underline;
+}
