@@ -167,10 +167,6 @@ body {
     background-color: var(--Task-InProcess);
 }
 
-/* .container .task-list .task .task-text{
-    max-width: 64%;
-} */
-
 .container .task-list .superBtnBox{
     height: 100%;
 }
