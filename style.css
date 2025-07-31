@@ -150,6 +150,7 @@ body {
 .container .task-list .task{
     align-items: center;
     min-height: 7vh;
+    border-radius: 2px;
     padding: 0 calc(var(--padding)/4);
     position: relative;
 }
